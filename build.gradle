@@ -4,6 +4,7 @@ version = '1.0'
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE")
@@ -14,6 +15,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'maven'
 
 jar {
     baseName = 'listened-common'
@@ -32,8 +34,4 @@ dependencies {
     compile("com.fasterxml.jackson.core:jackson-databind")
     compile("org.projectlombok:lombok:1.16.2")
     testCompile("junit:junit")
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.4'
 }

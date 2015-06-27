@@ -1,13 +1,15 @@
 group = 'io.listened'
 version = '1.0'
 
+
+
 buildscript {
     repositories {
         mavenCentral()
         jcenter()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE")
+        //classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE")
     }
 }
 
@@ -30,9 +32,9 @@ targetCompatibility = 1.8
 
 dependencies {
     compile 'org.springframework.data:spring-data-jpa:1.8.0.RELEASE'
-    compile("com.fasterxml.jackson.core:jackson-databind")
+    compile("com.fasterxml.jackson.core:jackson-databind:2.4.6")
     compile("org.projectlombok:lombok:1.16.2")
-    testCompile("junit:junit")
+    testCompile("junit:junit:4.12")
 }
 
 task wrapper(type: Wrapper) {

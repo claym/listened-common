@@ -5,6 +5,7 @@ import java.util.Date;
 
 /**
  * Created by Clay on 6/21/2015.
+ *
  */
 @Entity
 @Table(name="podcast")
@@ -156,5 +157,24 @@ public class Podcast {
 
     public void setExplicit(Boolean explicit) {
         this.explicit = explicit;
+    }
+
+    @Override
+    public String toString() {
+        return "Podcast{" +
+                "id=" + id +
+                ", feedUrl='" + feedUrl + '\'' +
+                ", copyright='" + copyright + '\'' +
+                ", description='" + description + '\'' +
+                ", docs='" + docs + '\'' +
+                ", language='" + language + '\'' +
+                ", link='" + link + '\'' +
+                ", publishDate=" + publishDate +
+                ", title='" + title + '\'' +
+                ", summary='" + summary + '\'' +
+                ", subtitle='" + subtitle + '\'' +
+                ", block=" + block +
+                ", explicit=" + explicit +
+                '}';
     }
 }

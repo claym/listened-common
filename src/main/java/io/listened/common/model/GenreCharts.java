@@ -10,8 +10,13 @@ import javax.persistence.*;
 @Table(name = "genre_charts")
 public class GenreCharts {
 
+    @Id
+    @Column(name = "genre_id")
+    @GeneratedValue
+    private Long id;
+
     @OneToOne
-    @JoinColumn(name = "genre_id")
+    @PrimaryKeyJoinColumn(name = "genre_id")
     private Genre genre;
 
     @Column(name = "videoPodcastEpisodes")
@@ -31,6 +36,14 @@ public class GenreCharts {
 
     @Column(name = "videoPodcasts")
     private String videoPodcasts;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Genre getGenre() {
         return genre;

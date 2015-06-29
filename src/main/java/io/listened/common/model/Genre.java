@@ -28,10 +28,10 @@ public class Genre {
     @JoinColumn(name = "parentId")
     private Genre parent;
 
-    @OneToOne(mappedBy = "genre", fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "genre", fetch = FetchType.EAGER)
     private GenreCharts genreCharts;
 
-    @OneToOne(mappedBy = "genre", fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "genre", fetch = FetchType.EAGER)
     private GenreRss genreRss;
 
     public Long getId() {

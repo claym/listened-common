@@ -24,7 +24,7 @@ public class Genre {
     @OneToMany(mappedBy = "parent")
     private List<Genre> subGenres;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parentId")
     private Genre parent;
 

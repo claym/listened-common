@@ -100,4 +100,18 @@ public class GenreCharts {
     public void setVideoPodcasts(String videoPodcasts) {
         this.videoPodcasts = videoPodcasts;
     }
+
+    @Override
+    public String toString() {
+        return "GenreCharts{" +
+                "id=" + id +
+                ", genre=" + genre +
+                ", videoPodcastEpisodes='" + videoPodcastEpisodes + '\'' +
+                ", podcasts='" + podcasts + '\'' +
+                ", audioPodcastEpisodes='" + audioPodcastEpisodes + '\'' +
+                ", audioPodcasts='" + audioPodcasts + '\'' +
+                ", podcastEpisodes='" + podcastEpisodes + '\'' +
+                ", videoPodcasts='" + videoPodcasts + '\'' +
+                '}';
+    }
 }

@@ -91,4 +91,17 @@ public class Genre {
     public void setGenreRss(GenreRss genreRss) {
         this.genreRss = genreRss;
     }
+
+    @Override
+    public String toString() {
+        return "Genre{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                ", subGenres=" + subGenres +
+                ", parent=" + parent +
+                "\n\t, genreCharts=" + genreCharts +
+                "\n\t, genreRss=" + genreRss +
+                '}';
+    }
 }

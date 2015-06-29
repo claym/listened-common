@@ -100,4 +100,18 @@ public class GenreRss {
     public void setTopPodcastEpisodes(String topPodcastEpisodes) {
         this.topPodcastEpisodes = topPodcastEpisodes;
     }
+
+    @Override
+    public String toString() {
+        return "GenreRss{" +
+                "id=" + id +
+                ", genre=" + genre +
+                ", topVideoPodcastEpisodes='" + topVideoPodcastEpisodes + '\'' +
+                ", topAudioPodcasts='" + topAudioPodcasts + '\'' +
+                ", topVideoPodcasts='" + topVideoPodcasts + '\'' +
+                ", topPodcasts='" + topPodcasts + '\'' +
+                ", topAudioPodcastEpisodes='" + topAudioPodcastEpisodes + '\'' +
+                ", topPodcastEpisodes='" + topPodcastEpisodes + '\'' +
+                '}';
+    }
 }

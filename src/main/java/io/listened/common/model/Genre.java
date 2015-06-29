@@ -21,9 +21,7 @@ public class Genre {
     @Column(name = "url", nullable = false)
     private String url;
 
-    @OneToMany
-    @OrderColumn(name = "id")
-    @JoinColumn(name = "parentId")
+    @OneToMany(mappedBy = "parent")
     private List<Genre> subGenres;
 
     @ManyToOne

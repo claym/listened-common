@@ -21,6 +21,9 @@ public class Genre {
     @Column(name = "url", nullable = false)
     private String url;
 
+    @Column(name="itunes_id", nullable = false)
+    private Long iTunesId;
+
     @OneToMany
     @OrderColumn(name = "id")
     @JoinColumn(name = "parentId")
@@ -92,16 +95,25 @@ public class Genre {
         this.genreRss = genreRss;
     }
 
+    public Long getiTunesId() {
+        return iTunesId;
+    }
+
+    public void setiTunesId(Long iTunesId) {
+        this.iTunesId = iTunesId;
+    }
+
     @Override
     public String toString() {
         return "Genre{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", url='" + url + '\'' +
-                ", subGenres=" + subGenres +
+                ", iTunesId=" + iTunesId +
+                ", \n\tsubGenres=" + subGenres +
                 ", parent=" + parent +
-                "\n\t, genreCharts=" + genreCharts +
-                "\n\t, genreRss=" + genreRss +
+                ", \n\tgenreCharts=" + genreCharts +
+                ", \n\tgenreRss=" + genreRss +
                 '}';
     }
 }

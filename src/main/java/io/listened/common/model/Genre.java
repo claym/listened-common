@@ -21,7 +21,7 @@ public class Genre {
     @Column(name = "url", nullable = false)
     private String url;
 
-    @OneToMany(mappedBy = "parent")
+    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
     private List<Genre> subGenres;
 
     @ManyToOne(fetch = FetchType.LAZY)

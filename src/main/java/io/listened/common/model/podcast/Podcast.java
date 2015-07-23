@@ -1,11 +1,11 @@
-package io.listened.common.model;
+package io.listened.common.model.podcast;
 
 import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by Clay on 6/21/2015.
- *
+ * Podcast attributes standard to the rss namespace
  */
 @Entity
 @Table(name="podcast")

@@ -1,5 +1,7 @@
 package io.listened.common.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,9 +23,10 @@ public class Genre {
     @Column(name = "url", nullable = false)
     private String url;
 
-    @OneToMany(mappedBy = "parent")
+    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
     private List<Genre> subGenres;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parentId")
     private Genre parent;

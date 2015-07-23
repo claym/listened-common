@@ -1,5 +1,7 @@
 package io.listened.common.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 /**
@@ -17,6 +19,7 @@ public class GenreCharts {
 
     @OneToOne
     @PrimaryKeyJoinColumn(name = "genre_id")
+    @JsonIgnore
     private Genre genre;
 
     @Column(name = "videoPodcastEpisodes")

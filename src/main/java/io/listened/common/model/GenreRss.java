@@ -1,5 +1,7 @@
 package io.listened.common.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 /**
@@ -15,6 +17,7 @@ public class GenreRss {
     @GeneratedValue
     private Long id;
 
+    @JsonIgnore
     @OneToOne
     @PrimaryKeyJoinColumn(name = "genre_id")
     private Genre genre;

@@ -18,7 +18,7 @@ public class GenreRss {
     @GeneratedValue
     private Long id;
 
-    @JsonManagedReference
+    @JsonManagedReference("genreRss")
     @OneToOne
     @PrimaryKeyJoinColumn(name = "genre_id")
     private Genre genre;

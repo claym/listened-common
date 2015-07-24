@@ -18,7 +18,7 @@ public class GenreCharts {
     @GeneratedValue
     private Long id;
 
-    @JsonManagedReference
+    @JsonManagedReference("genreCharts")
     @OneToOne
     @PrimaryKeyJoinColumn(name = "genre_id")
     @JsonIgnore

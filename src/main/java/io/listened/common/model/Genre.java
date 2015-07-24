@@ -24,20 +24,20 @@ public class Genre {
     @Column(name = "url", nullable = false)
     private String url;
 
-    @JsonBackReference
+    @JsonBackReference("subGenres")
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
     private List<Genre> subGenres;
 
-    @JsonBackReference
+    @JsonBackReference("parent")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parentId")
     private Genre parent;
 
-    @JsonBackReference
+    @JsonBackReference("genreCharts")
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "genre", fetch = FetchType.EAGER)
     private GenreCharts genreCharts;
 
-    @JsonBackReference
+    @JsonBackReference("genreRss")
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "genre", fetch = FetchType.EAGER)
     private GenreRss genreRss;
 

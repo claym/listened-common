@@ -1,6 +1,7 @@
 package io.listened.common.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 
@@ -17,6 +18,7 @@ public class GenreCharts {
     @GeneratedValue
     private Long id;
 
+    @JsonManagedReference
     @OneToOne
     @PrimaryKeyJoinColumn(name = "genre_id")
     @JsonIgnore

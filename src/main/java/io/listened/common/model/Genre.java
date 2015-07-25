@@ -33,13 +33,41 @@ public class Genre {
     @JoinColumn(name = "parentId")
     private Genre parent;
 
-    @JsonManagedReference("genreCharts")
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "genre", fetch = FetchType.EAGER)
-    private GenreCharts genreCharts;
+    @Column(name = "videoPodcastEpisodes")
+    private String videoPodcastEpisodes;
 
-    @JsonManagedReference("genreRss")
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "genre", fetch = FetchType.EAGER)
-    private GenreRss genreRss;
+    @Column(name = "podcasts")
+    private String podcasts;
+
+    @Column(name = "audioPodcastEpisodes")
+    private String audioPodcastEpisodes;
+
+    @Column(name = "audioPodcasts")
+    private String audioPodcasts;
+
+    @Column(name = "podcastEpisodes")
+    private String podcastEpisodes;
+
+    @Column(name = "videoPodcasts")
+    private String videoPodcasts;
+
+    @Column(name = "topVideoPodcastEpisodes")
+    private String topVideoPodcastEpisodes;
+
+    @Column(name = "topAudioPodcasts")
+    private String topAudioPodcasts;
+
+    @Column(name = "topVideoPodcasts")
+    private String topVideoPodcasts;
+
+    @Column(name = "topPodcasts")
+    private String topPodcasts;
+
+    @Column(name = "topAudioPodcastEpisodes")
+    private String topAudioPodcastEpisodes;
+
+    @Column(name = "topPodcastEpisodes")
+    private String topPodcastEpisodes;
 
     public Long getId() {
         return id;
@@ -81,20 +109,100 @@ public class Genre {
         this.parent = parent;
     }
 
-    public GenreCharts getGenreCharts() {
-        return genreCharts;
+    public String getVideoPodcastEpisodes() {
+        return videoPodcastEpisodes;
     }
 
-    public void setGenreCharts(GenreCharts genreCharts) {
-        this.genreCharts = genreCharts;
+    public void setVideoPodcastEpisodes(String videoPodcastEpisodes) {
+        this.videoPodcastEpisodes = videoPodcastEpisodes;
     }
 
-    public GenreRss getGenreRss() {
-        return genreRss;
+    public String getPodcasts() {
+        return podcasts;
     }
 
-    public void setGenreRss(GenreRss genreRss) {
-        this.genreRss = genreRss;
+    public void setPodcasts(String podcasts) {
+        this.podcasts = podcasts;
+    }
+
+    public String getAudioPodcastEpisodes() {
+        return audioPodcastEpisodes;
+    }
+
+    public void setAudioPodcastEpisodes(String audioPodcastEpisodes) {
+        this.audioPodcastEpisodes = audioPodcastEpisodes;
+    }
+
+    public String getAudioPodcasts() {
+        return audioPodcasts;
+    }
+
+    public void setAudioPodcasts(String audioPodcasts) {
+        this.audioPodcasts = audioPodcasts;
+    }
+
+    public String getPodcastEpisodes() {
+        return podcastEpisodes;
+    }
+
+    public void setPodcastEpisodes(String podcastEpisodes) {
+        this.podcastEpisodes = podcastEpisodes;
+    }
+
+    public String getVideoPodcasts() {
+        return videoPodcasts;
+    }
+
+    public void setVideoPodcasts(String videoPodcasts) {
+        this.videoPodcasts = videoPodcasts;
+    }
+
+    public String getTopVideoPodcastEpisodes() {
+        return topVideoPodcastEpisodes;
+    }
+
+    public void setTopVideoPodcastEpisodes(String topVideoPodcastEpisodes) {
+        this.topVideoPodcastEpisodes = topVideoPodcastEpisodes;
+    }
+
+    public String getTopAudioPodcasts() {
+        return topAudioPodcasts;
+    }
+
+    public void setTopAudioPodcasts(String topAudioPodcasts) {
+        this.topAudioPodcasts = topAudioPodcasts;
+    }
+
+    public String getTopVideoPodcasts() {
+        return topVideoPodcasts;
+    }
+
+    public void setTopVideoPodcasts(String topVideoPodcasts) {
+        this.topVideoPodcasts = topVideoPodcasts;
+    }
+
+    public String getTopPodcasts() {
+        return topPodcasts;
+    }
+
+    public void setTopPodcasts(String topPodcasts) {
+        this.topPodcasts = topPodcasts;
+    }
+
+    public String getTopAudioPodcastEpisodes() {
+        return topAudioPodcastEpisodes;
+    }
+
+    public void setTopAudioPodcastEpisodes(String topAudioPodcastEpisodes) {
+        this.topAudioPodcastEpisodes = topAudioPodcastEpisodes;
+    }
+
+    public String getTopPodcastEpisodes() {
+        return topPodcastEpisodes;
+    }
+
+    public void setTopPodcastEpisodes(String topPodcastEpisodes) {
+        this.topPodcastEpisodes = topPodcastEpisodes;
     }
 
     @Override
@@ -103,10 +211,6 @@ public class Genre {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", url='" + url + '\'' +
-                ", \n\tsubGenres=" + subGenres +
-                ", parent=" + parent +
-                ", \n\tgenreCharts=" + genreCharts +
-                ", \n\tgenreRss=" + genreRss +
                 '}';
     }
 }

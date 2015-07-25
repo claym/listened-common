@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -18,17 +19,17 @@ public class Genre {
     @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
+    @NotNull
     @Column(name = "name", nullable = false)
     private String name;
 
+    @NotNull
     @Column(name = "url", nullable = false)
     private String url;
 
-    @JsonManagedReference("parent")
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
     private List<Genre> subGenres;
 
-    @JsonBackReference("parent")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parentId")
     private Genre parent;

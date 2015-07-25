@@ -25,11 +25,10 @@ public class Genre {
     @Column(name = "url", nullable = false)
     private String url;
 
-    @JsonBackReference("subGenre")
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
     private List<Genre> subGenres;
 
-    @JsonManagedReference("subGenre")
+    @JsonManagedReference("parent")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parentId")
     private Genre parent;

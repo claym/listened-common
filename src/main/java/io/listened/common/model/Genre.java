@@ -1,7 +1,6 @@
 package io.listened.common.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -25,20 +24,20 @@ public class Genre {
     @Column(name = "url", nullable = false)
     private String url;
 
-    @JsonBackReference
+    @JsonManagedReference("parent")
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
     private List<Genre> subGenres;
 
-    @JsonManagedReference
+    @JsonBackReference("parent")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parentId")
     private Genre parent;
 
-    @JsonBackReference("genreCharts")
+    @JsonManagedReference("genreCharts")
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "genre", fetch = FetchType.EAGER)
     private GenreCharts genreCharts;
 
-    @JsonBackReference("genreRss")
+    @JsonManagedReference("genreRss")
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "genre", fetch = FetchType.EAGER)
     private GenreRss genreRss;
 

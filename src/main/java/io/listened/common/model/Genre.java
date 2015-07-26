@@ -30,7 +30,7 @@ public class Genre {
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
     private List<Genre> subGenres;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "parentId")
     private Genre parent;
 

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "genre")
-public class Genre {
+public class Genre implements Serializable {
 
     @Id
     @Column(name = "id", nullable = false, unique = true)

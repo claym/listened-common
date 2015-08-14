@@ -27,9 +27,6 @@ public class Episode {
     @Column(name="description")
     private String description;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "episode", fetch = FetchType.EAGER)
-    private EpisodeEnclosure enclosure;
-
     @Column(name="link")
     private String link;
 
@@ -41,6 +38,17 @@ public class Episode {
 
     @Column(name="updated_date")
     private Date updatedDate;
+
+    // enclosure stuff
+
+    @Column(name="url")
+    private String url;
+
+    @Column(name="type")
+    private String type;
+
+    @Column(name="length")
+    private Long length;
 
     // itunes stuff
 

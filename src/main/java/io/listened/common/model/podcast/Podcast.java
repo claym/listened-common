@@ -1,5 +1,7 @@
 package io.listened.common.model.podcast;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -7,6 +9,7 @@ import java.util.Date;
  * Created by Clay on 6/21/2015.
  * Podcast attributes standard to the rss namespace
  */
+@Data
 @Entity
 @Table(name="podcast")
 public class Podcast {
@@ -55,126 +58,4 @@ public class Podcast {
     @Column(name="explicit")
     Boolean explicit;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFeedUrl() {
-        return feedUrl;
-    }
-
-    public void setFeedUrl(String feedUrl) {
-        this.feedUrl = feedUrl;
-    }
-
-    public String getCopyright() {
-        return copyright;
-    }
-
-    public void setCopyright(String copyright) {
-        this.copyright = copyright;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDocs() {
-        return docs;
-    }
-
-    public void setDocs(String docs) {
-        this.docs = docs;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public Date getPublishDate() {
-        return publishDate;
-    }
-
-    public void setPublishDate(Date publishDate) {
-        this.publishDate = publishDate;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getSummary() {
-        return summary;
-    }
-
-    public void setSummary(String summary) {
-        this.summary = summary;
-    }
-
-    public String getSubtitle() {
-        return subtitle;
-    }
-
-    public void setSubtitle(String subtitle) {
-        this.subtitle = subtitle;
-    }
-
-    public Boolean getBlock() {
-        return block;
-    }
-
-    public void setBlock(Boolean block) {
-        this.block = block;
-    }
-
-    public Boolean getExplicit() {
-        return explicit;
-    }
-
-    public void setExplicit(Boolean explicit) {
-        this.explicit = explicit;
-    }
-
-    @Override
-    public String toString() {
-        return "Podcast{" +
-                "id=" + id +
-                ", feedUrl='" + feedUrl + '\'' +
-                ", copyright='" + copyright + '\'' +
-                ", description='" + description + '\'' +
-                ", docs='" + docs + '\'' +
-                ", language='" + language + '\'' +
-                ", link='" + link + '\'' +
-                ", publishDate=" + publishDate +
-                ", title='" + title + '\'' +
-                ", summary='" + summary + '\'' +
-                ", subtitle='" + subtitle + '\'' +
-                ", block=" + block +
-                ", explicit=" + explicit +
-                '}';
-    }
 }

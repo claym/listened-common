@@ -1,5 +1,6 @@
 package io.listened.common.model;
 
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.Column;
@@ -10,6 +11,7 @@ import javax.persistence.Table;
 /**
  * Created by Clay on 5/29/2015.
  */
+@Data
 @Entity
 @Table(name = "ROLE")
 public class Role implements GrantedAuthority {
@@ -31,22 +33,6 @@ public class Role implements GrantedAuthority {
 
     public Role(String name, String description) {
         this.name = name;
-        this.description = description;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
         this.description = description;
     }
 

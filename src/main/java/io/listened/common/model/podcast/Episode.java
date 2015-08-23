@@ -1,5 +1,7 @@
 package io.listened.common.model.podcast;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -7,6 +9,7 @@ import java.util.Date;
  * Created by Clay on 6/29/2015.
  * Episode attributes standard to the rss namespace
  */
+@Data
 @Entity
 @Table(name="episode")
 public class Episode {
@@ -60,9 +63,5 @@ public class Episode {
 
     @Column(name="summary")
     private String summary;
-
-    // yahoo media stuff
-
-
 
 }

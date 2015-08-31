@@ -59,8 +59,8 @@ public class Genre implements Serializable {
     @Column(name = "videoPodcastsChart")
     private String videoPodcasts;
 
-    @Column(name = "topVideoPodcastEpisodes")
-    private String topVideoPodcastEpisodes;
+    @Column(name = "topVideoPodcastEpisodesRss")
+    private String topVideoPodcastEpisodesRss;
 
     @Column(name = "topAudioPodcastsRss")
     private String topAudioPodcastsRss;

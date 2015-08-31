@@ -9,6 +9,12 @@ import java.util.List;
 /**
  * Created by Clay on 6/29/2015.
  * Episode attributes standard to the rss namespace
+ *
+ * skipped stuff
+ * links
+ * titleex
+ * contents
+ * source
  */
 @Data
 @Entity
@@ -30,14 +36,21 @@ public class Episode {
     @Column(name="link")
     private String link;
 
-    @Column(name="publish_date")
-    private Date publishDate;
+    @Column(name="published_date")
+    private Date publishedDate;
 
     @Column(name="title")
     private String title;
 
     @Column(name="updated_date")
     private Date updatedDate;
+
+    @Column(name="last_processed")
+    Date lastProcessed;
+
+    // called uri in syndentry
+    @Column(name="guid")
+    private String guid;
 
     // enclosure stuff
 

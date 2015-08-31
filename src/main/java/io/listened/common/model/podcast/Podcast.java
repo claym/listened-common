@@ -1,9 +1,11 @@
 package io.listened.common.model.podcast;
 
+import io.listened.common.model.Genre;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Clay on 6/21/2015.
@@ -57,5 +59,24 @@ public class Podcast {
 
     @Column(name="explicit")
     Boolean explicit;
+
+    /** Association **/
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name="podcast_genre", joinColumns = {
+            @JoinColumn(name = "PODCAST_ID", nullable = false, updatable = false) },
+            inverseJoinColumns = { @JoinColumn(name = "GENRE_ID",
+                    nullable = false, updatable = false) })
+    List<Genre> genres;
+
+    @OneToMany(mappedBy="podcast", fetch = FetchType.LAZY)
+    List<Episode> episodes;
+
+    @ManyToOne
+    @JoinColumn(name="author_id")
+    private Author author;
+
+    @OneToMany(mappedBy = "podcast")
+    private List<PodcastKeyword> podcastKeywords;
 
 }

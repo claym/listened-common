@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Clay on 6/29/2015.
@@ -16,13 +17,9 @@ public class Episode {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "podcast_id_seq", sequenceName = "podcast_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "episode_id_seq", sequenceName = "episode_id_seq", allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Long id;
-
-    @ManyToOne
-    @JoinColumn(name = "podcastId")
-    private Podcast podcast;
 
     @Column(name="comments")
     private String comments;
@@ -63,5 +60,14 @@ public class Episode {
 
     @Column(name="summary")
     private String summary;
+
+    // associations
+
+    @ManyToOne
+    @JoinColumn(name = "podcast_id")
+    private Podcast podcast;
+
+    @OneToMany(mappedBy = "episode")
+    private List<EpisodeKeyword> episodeKeyword;
 
 }

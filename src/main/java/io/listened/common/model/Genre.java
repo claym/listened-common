@@ -41,40 +41,40 @@ public class Genre implements Serializable {
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "genres")
     private List<Podcast> podcasts;
 
-    @Column(name = "videoPodcastEpisodes")
-    private String videoPodcastEpisodes;
+    @Column(name = "videoPodcastEpisodesChart")
+    private String videoPodcastEpisodesChart;
 
     @Column(name = "podcastsChart")
     private String podcastsChart;
 
-    @Column(name = "audioPodcastEpisodes")
-    private String audioPodcastEpisodes;
+    @Column(name = "audioPodcastEpisodesChart")
+    private String audioPodcastEpisodesChart;
 
-    @Column(name = "audioPodcasts")
-    private String audioPodcasts;
+    @Column(name = "audioPodcastsChart")
+    private String audioPodcastsChart;
 
-    @Column(name = "podcastEpisodes")
-    private String podcastEpisodes;
+    @Column(name = "podcastEpisodesChart")
+    private String podcastEpisodesChart;
 
-    @Column(name = "videoPodcasts")
+    @Column(name = "videoPodcastsChart")
     private String videoPodcasts;
 
     @Column(name = "topVideoPodcastEpisodes")
     private String topVideoPodcastEpisodes;
 
-    @Column(name = "topAudioPodcasts")
-    private String topAudioPodcasts;
+    @Column(name = "topAudioPodcastsRss")
+    private String topAudioPodcastsRss;
 
-    @Column(name = "topVideoPodcasts")
-    private String topVideoPodcasts;
+    @Column(name = "topVideoPodcastsRss")
+    private String topVideoPodcastsRss;
 
-    @Column(name = "topPodcasts")
-    private String topPodcasts;
+    @Column(name = "topPodcastsRss")
+    private String topPodcastsRss;
 
-    @Column(name = "topAudioPodcastEpisodes")
-    private String topAudioPodcastEpisodes;
+    @Column(name = "topAudioPodcastEpisodesRss")
+    private String topAudioPodcastEpisodesRss;
 
-    @Column(name = "topPodcastEpisodes")
-    private String topPodcastEpisodes;
+    @Column(name = "topPodcastEpisodesRss")
+    private String topPodcastEpisodesRss;
 
 }

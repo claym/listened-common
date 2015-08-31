@@ -16,6 +16,13 @@ import java.util.List;
 @Table(name="podcast")
 public class Podcast {
 
+    public static final String STATUS_UNPROCESSED = "U";
+    public static final String STATUS_PROCESSING = "P";
+    public static final String STATUS_COMPLETED = "C";
+    public static final String STATUS_FAILED = "F";
+    public static final String STATUS_REQUESTED = "R";
+    public static final String STATUS_QUEUED = "Q";
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "podcast_id_seq", sequenceName = "podcast_id_seq", allocationSize = 1)
@@ -62,6 +69,9 @@ public class Podcast {
 
     @Column(name="last_processed")
     Date lastProcessed;
+
+    @Column(name="status")
+    String status;
 
     /** Association **/
 

@@ -60,6 +60,9 @@ public class Podcast {
     @Column(name="explicit")
     Boolean explicit;
 
+    @Column(name="last_processed")
+    Date lastProcessed;
+
     /** Association **/
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

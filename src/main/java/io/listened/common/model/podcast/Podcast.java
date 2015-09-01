@@ -71,7 +71,7 @@ public class Podcast {
     Date lastProcessed;
 
     @Column(name="status")
-    String status;
+    String status = STATUS_UNPROCESSED;
 
     /** Association **/
 

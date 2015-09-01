@@ -17,11 +17,11 @@ public class PodcastKeyword {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(targetEntity = Podcast.class)
     @JoinColumn(name="podcast_id")
     private Podcast podcast;
 
-    @ManyToOne
+    @ManyToOne(targetEntity = Keyword.class)
     @JoinColumn(name = "keyword_id")
     private Keyword keyword;
 

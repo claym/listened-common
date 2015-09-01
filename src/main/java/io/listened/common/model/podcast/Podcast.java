@@ -75,21 +75,21 @@ public class Podcast {
 
     /** Association **/
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = Genre.class)
     @JoinTable(name="podcast_genre", joinColumns = {
             @JoinColumn(name = "PODCAST_ID", nullable = false, updatable = false) },
             inverseJoinColumns = { @JoinColumn(name = "GENRE_ID",
                     nullable = false, updatable = false) })
-    List<Genre> genres;
+    private List<Genre> genres;
 
     @OneToMany(mappedBy="podcast", fetch = FetchType.LAZY)
-    List<Episode> episodes;
+    private List<Episode> episodes;
 
-    @ManyToOne
+    @ManyToOne(targetEntity = Author.class)
     @JoinColumn(name="author_id")
     private Author author;
 
-    @OneToMany(mappedBy = "podcast")
+    @OneToMany(mappedBy = "podcast", fetch = FetchType.LAZY, targetEntity = PodcastKeyword.class)
     private List<PodcastKeyword> podcastKeywords;
 
 }

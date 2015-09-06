@@ -32,33 +32,33 @@ public class Podcast {
     @Column(name = "feed_url", unique = true, nullable = false)
     String feedUrl;
 
-    @Column(name="copyright")
+    @Column(name="copyright", columnDefinition = "TEXT")
     String copyright;
 
-    @Column(name="description")
+    @Column(name="description", columnDefinition = "test")
     String description;
 
-    @Column(name="docs")
+    @Column(name="docs", columnDefinition = "test")
     String docs;
 
     @Column(name="language")
     String language;
 
-    @Column(name="link")
+    @Column(name="link", columnDefinition = "test")
     String link;
 
     @Column(name="publish_date")
     Date publishDate;
 
-    @Column(name="title")
+    @Column(name="title", columnDefinition = "test")
     String title;
 
     /** Begin iTunes Stuff **/
 
-    @Column(name="summary")
+    @Column(name="summary", columnDefinition = "test")
     String summary;
 
-    @Column(name="subtitle")
+    @Column(name="subtitle", columnDefinition = "test")
     String subtitle;
 
     @Column(name="block")

@@ -1,8 +1,11 @@
 package io.listened.common.model.podcast;
 
 import lombok.Data;
+import org.hibernate.annotations.Type;
+import org.hibernate.type.TextType;
 
 import javax.persistence.*;
+import java.sql.Types;
 import java.util.Date;
 import java.util.List;
 
@@ -27,19 +30,19 @@ public class Episode {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name="comments")
+    @Column(name="comments", columnDefinition = "text")
     private String comments;
 
-    @Column(name="description")
+    @Column(name="description", columnDefinition = "text")
     private String description;
 
-    @Column(name="link")
+    @Column(name="link", columnDefinition = "text")
     private String link;
 
     @Column(name="published_date")
     private Date publishedDate;
 
-    @Column(name="title")
+    @Column(name="title", columnDefinition = "text")
     private String title;
 
     @Column(name="updated_date")
@@ -49,7 +52,7 @@ public class Episode {
     Date lastProcessed;
 
     // called uri in syndentry
-    @Column(name="guid")
+    @Column(name="guid", columnDefinition = "text")
     private String guid;
 
     // enclosure stuff
@@ -71,7 +74,7 @@ public class Episode {
     @Column(name="explicit")
     private Boolean explicit;
 
-    @Column(name="summary")
+    @Column(name="summary", columnDefinition = "text")
     private String summary;
 
     // associations

@@ -71,7 +71,7 @@ public class Episode {
     @Column(name="explicit")
     private Boolean explicit;
 
-    @Column(name="summary")
+    @Column(name="summary", columnDefinition = "text")
     private String summary;
 
     // associations

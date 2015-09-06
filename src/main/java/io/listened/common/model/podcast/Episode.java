@@ -76,11 +76,11 @@ public class Episode {
 
     // associations
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "podcast_id")
     private Podcast podcast;
 
-    @OneToMany(mappedBy = "episode")
+    @OneToMany(mappedBy = "episode", fetch = FetchType.LAZY)
     private List<EpisodeKeyword> episodeKeyword;
 
 }

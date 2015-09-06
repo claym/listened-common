@@ -85,7 +85,7 @@ public class Podcast {
     @OneToMany(mappedBy="podcast", fetch = FetchType.LAZY)
     private List<Episode> episodes;
 
-    @ManyToOne(targetEntity = Author.class)
+    @ManyToOne(targetEntity = Author.class, fetch = FetchType.LAZY)
     @JoinColumn(name="author_id")
     private Author author;
 

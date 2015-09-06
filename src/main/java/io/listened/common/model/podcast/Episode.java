@@ -1,11 +1,8 @@
 package io.listened.common.model.podcast;
 
 import lombok.Data;
-import org.hibernate.annotations.Type;
-import org.hibernate.type.TextType;
 
 import javax.persistence.*;
-import java.sql.Types;
 import java.util.Date;
 import java.util.List;
 
@@ -36,7 +33,7 @@ public class Episode {
     @Column(name="description", columnDefinition = "text")
     private String description;
 
-    @Column(name="link", columnDefinition = "text")
+    @Column(name="link")
     private String link;
 
     @Column(name="published_date")
@@ -57,7 +54,7 @@ public class Episode {
 
     // enclosure stuff
 
-    @Column(name="url")
+    @Column(name="url", columnDefinition = "text")
     private String url;
 
     @Column(name="type")
@@ -74,7 +71,7 @@ public class Episode {
     @Column(name="explicit")
     private Boolean explicit;
 
-    @Column(name="summary", columnDefinition = "text")
+    @Column(name="summary")
     private String summary;
 
     // associations

@@ -1,8 +1,6 @@
 package io.listened.common.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import io.listened.common.model.podcast.Podcast;
+import io.listened.common.model.podcast.PodcastGenre;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -37,9 +35,13 @@ public class Genre implements Serializable {
     @ManyToOne
     @JoinColumn(name = "parent_id")
     private Genre parent;
-
+    /**
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "genres")
     private List<Podcast> podcasts;
+    **/
+
+    @OneToMany(mappedBy = "genre")
+    private List<PodcastGenre> podcastGenres;
 
     @Column(name = "videoPodcastEpisodesChart")
     private String videoPodcastEpisodesChart;

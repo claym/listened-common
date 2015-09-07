@@ -75,12 +75,17 @@ public class Podcast {
 
     /** Association **/
 
+    /**
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = Genre.class)
     @JoinTable(name="podcast_genre", joinColumns = {
             @JoinColumn(name = "PODCAST_ID", nullable = false, updatable = false) },
             inverseJoinColumns = { @JoinColumn(name = "GENRE_ID",
                     nullable = false, updatable = false) })
     private List<Genre> genres;
+    **/
+
+    @OneToMany(mappedBy = "podcast", fetch = FetchType.LAZY, targetEntity = PodcastGenre.class)
+    private List<PodcastGenre> podcastGenres;
 
     @OneToMany(mappedBy="podcast", fetch = FetchType.LAZY)
     private List<Episode> episodes;

@@ -21,8 +21,7 @@ public class Podcast {
     public static final String STATUS_FAILED = "F";
     public static final String STATUS_REQUESTED = "R";
     public static final String STATUS_QUEUED = "Q";
-    @Column(name = "itunes_id")
-    public Long itunes_id;
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "podcast_id_seq", sequenceName = "podcast_id_seq", allocationSize = 1)

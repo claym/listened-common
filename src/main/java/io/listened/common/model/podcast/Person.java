@@ -11,8 +11,8 @@ import java.util.List;
  */
 @Data
 @Entity
-@Table(name="author")
-public class Author {
+@Table(name="person")
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -20,11 +20,23 @@ public class Author {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @NotBlank
     @Column(name="name")
     private String name;
 
-    @OneToMany(mappedBy = "author")
+    @Column(name="email")
+    private String email;
+
+    // synd feed value
+    @Column(name="uri")
+    private String uri;
+/**
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "authors")
     private List<Podcast> podcasts;
 
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "contributors")
+    private List<Podcast> podcasts;
+
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "editors")
+    private List<Podcast> podcasts;
+**/
 }

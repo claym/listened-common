@@ -56,6 +56,8 @@ public class Podcast {
     Boolean block;
     @Column(name = "explicit")
     Boolean explicit;
+    @Column(name="itunes_id")
+    Long itunesId;
 
     // listened processing info
     @Column(name = "last_processed")

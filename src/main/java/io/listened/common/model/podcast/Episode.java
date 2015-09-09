@@ -74,6 +74,9 @@ public class Episode {
     @Column(name="summary", columnDefinition = "text")
     private String summary;
 
+    @Column(name="author", columnDefinition = "text")
+    private String author;
+
     // associations
 
     @ManyToOne(fetch = FetchType.LAZY)

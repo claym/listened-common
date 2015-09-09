@@ -1,6 +1,7 @@
 package io.listened.common.model.podcast;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,6 +14,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "podcast")
+@ToString(exclude = {"podcastGenres", "episodes", "podcastKeywords"})
 public class Podcast {
 
     public static final String STATUS_UNPROCESSED = "U";

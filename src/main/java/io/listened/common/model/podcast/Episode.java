@@ -1,6 +1,7 @@
 package io.listened.common.model.podcast;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -19,6 +20,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name="episode")
+@ToString(exclude = {"podcast", "episodeKeywords"})
 public class Episode {
 
     @Id
@@ -84,6 +86,6 @@ public class Episode {
     private Podcast podcast;
 
     @OneToMany(mappedBy = "episode", fetch = FetchType.LAZY)
-    private List<EpisodeKeyword> episodeKeyword;
+    private List<EpisodeKeyword> episodeKeywords;
 
 }

@@ -28,6 +28,23 @@ public class PodcastGenre {
     @JoinColumn(name = "genre_id")
     private Genre genre;
 
+    @Column(name="rank")
     private Long rank;
+
+    public PodcastGenre() {
+        super();
+    }
+
+    public PodcastGenre(Podcast podcast, Genre genre) {
+        this.podcast = podcast;
+        this.genre = genre;
+    }
+
+    public PodcastGenre(Podcast podcast, Genre genre, Long rank) {
+        this.podcast = podcast;
+        this.genre = genre;
+        this.rank = rank;
+    }
+
 
 }

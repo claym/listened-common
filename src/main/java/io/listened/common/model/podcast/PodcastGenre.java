@@ -4,6 +4,7 @@ import io.listened.common.model.Genre;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by Clay on 9/7/2015.
@@ -30,6 +31,9 @@ public class PodcastGenre {
 
     @Column(name="rank")
     private Long rank;
+
+    @Column(name="last_updated")
+    private Date lastUpdated;
 
     public PodcastGenre() {
         super();

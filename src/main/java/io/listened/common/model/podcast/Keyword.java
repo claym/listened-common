@@ -36,4 +36,19 @@ public class Keyword {
     @OneToMany(mappedBy = "keyword")
     private List<PodcastKeyword> podcastKeywords;
 
+    public Keyword () {
+        super();
+    }
+
+    public Keyword(String name) {
+        super();
+        this.name = name;
+    }
+
+    public Keyword(String name, User user) {
+        super();
+        this.name = name;
+        this.createdBy = user;
+    }
+
 }

@@ -1,5 +1,6 @@
 package io.listened.common.model.podcast;
 
+import io.listened.common.model.User;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -32,4 +33,26 @@ public class EpisodeKeyword {
     @Column(name = "submitted")
     private boolean submitted = false;
 
+    @ManyToOne
+    @JoinColumn(name = "created_by")
+    private User createdBy;
+
+    public EpisodeKeyword() {
+        super();
+    }
+
+    public EpisodeKeyword(Episode episode, Keyword keyword) {
+        super();
+        this.episode = episode;
+        this.keyword = keyword;
+    }
+
+    public EpisodeKeyword(Episode episode, Keyword keyword, boolean identified, boolean submitted, User createdBy) {
+        super();
+        this.episode = episode;
+        this.keyword = keyword;
+        this.identified = identified;
+        this.submitted = submitted;
+        this.createdBy = createdBy;
+    }
 }

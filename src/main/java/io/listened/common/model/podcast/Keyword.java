@@ -23,7 +23,7 @@ public class Keyword {
     private Long id;
 
     @NotBlank
-    @Column(name="name")
+    @Column(name="name", unique = true)
     private String name;
 
     @ManyToOne

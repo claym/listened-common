@@ -115,7 +115,7 @@ public class Podcast {
                     nullable = false, updatable = false)})
     private List<Person> owners;
 **/
-    @OneToMany(mappedBy = "podcast", fetch = FetchType.LAZY, targetEntity = PodcastKeyword.class)
+    @OneToMany(mappedBy = "podcast", fetch = FetchType.LAZY, targetEntity = PodcastKeyword.class, orphanRemoval = true)
     private List<PodcastKeyword> podcastKeywords;
 
 }

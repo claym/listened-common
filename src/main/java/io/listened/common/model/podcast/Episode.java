@@ -85,7 +85,7 @@ public class Episode {
     @JoinColumn(name = "podcast_id")
     private Podcast podcast;
 
-    @OneToMany(mappedBy = "episode", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "episode", fetch = FetchType.LAZY, orphanRemoval = true)
     private List<EpisodeKeyword> episodeKeywords;
 
 }

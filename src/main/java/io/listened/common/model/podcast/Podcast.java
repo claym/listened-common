@@ -86,35 +86,7 @@ public class Podcast {
 
     @OneToMany(mappedBy = "podcast", fetch = FetchType.LAZY)
     private List<Episode> episodes;
-/**
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = Person.class)
-    @JoinTable(name = "podcast_author", joinColumns = {
-            @JoinColumn(name = "PODCAST_ID", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "PERSON_ID",
-                    nullable = false, updatable = false)})
-    private List<Person> authors;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = Person.class)
-    @JoinTable(name = "podcast_contributor", joinColumns = {
-            @JoinColumn(name = "PODCAST_ID", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "PERSON_ID",
-                    nullable = false, updatable = false)})
-    private List<Person> contributors;
-
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = Person.class)
-    @JoinTable(name = "podcast_editor", joinColumns = {
-            @JoinColumn(name = "PODCAST_ID", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "PERSON_ID",
-                    nullable = false, updatable = false)})
-    private List<Person> editors;
-
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = Person.class)
-    @JoinTable(name = "podcast_owner", joinColumns = {
-            @JoinColumn(name = "PODCAST_ID", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "PERSON_ID",
-                    nullable = false, updatable = false)})
-    private List<Person> owners;
-**/
     @OneToMany(mappedBy = "podcast", fetch = FetchType.LAZY, targetEntity = PodcastKeyword.class, orphanRemoval = true)
     private List<PodcastKeyword> podcastKeywords;
 

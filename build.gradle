@@ -41,7 +41,7 @@ targetCompatibility = 1.8
 
 dependencies {
 
-    compile("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
+
     compile("org.springframework.data:spring-data-rest-webmvc:2.3.1.RELEASE")
     compile("org.springframework.data:spring-data-jpa:1.8.0.RELEASE")
     compile("org.springframework.security:spring-security-web:4.0.1.RELEASE")
@@ -52,6 +52,7 @@ dependencies {
 
     runtime("com.h2database:h2:1.4.188")
 
+    testCompile("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
     testCompile("javax.el:javax.el-api:2.2.4")
     testCompile("org.glassfish.web:javax.el:2.2.4")
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")

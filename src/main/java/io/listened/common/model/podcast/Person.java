@@ -29,14 +29,5 @@ public class Person {
     // synd feed value
     @Column(name="uri")
     private String uri;
-/**
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "authors")
-    private List<Podcast> podcasts;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "contributors")
-    private List<Podcast> podcasts;
-
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "editors")
-    private List<Podcast> podcasts;
-**/
 }

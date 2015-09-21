@@ -44,9 +44,6 @@ public class Episode {
     @Column(name="title", columnDefinition = "text")
     private String title;
 
-    @Column(name="updated_date")
-    private Date updatedDate;
-
     @Column(name="last_processed")
     Date lastProcessed;
 

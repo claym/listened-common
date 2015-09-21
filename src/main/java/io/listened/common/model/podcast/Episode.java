@@ -79,6 +79,9 @@ public class Episode {
     @Column(name="author", columnDefinition = "text")
     private String author;
 
+    @Column(name="image_url", columnDefinition = "text")
+    private String imageUrl;
+
     // associations
 
     @ManyToOne(fetch = FetchType.LAZY)

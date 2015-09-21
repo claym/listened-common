@@ -45,6 +45,19 @@ public class Podcast {
     Date publishDate;
     @Column(name = "title", columnDefinition = "text")
     String title;
+
+    /**
+     * Image Stuff
+     */
+    @Column(name="image_url", columnDefinition = "text")
+    private String imageUrl;
+
+    @Column(name="image_title", columnDefinition = "text")
+    private String imageTitle;
+
+    @Column(name="imageLink", columnDefinition = "text")
+    private String imageLink;
+
     /**
      * Begin iTunes Stuff
      **/

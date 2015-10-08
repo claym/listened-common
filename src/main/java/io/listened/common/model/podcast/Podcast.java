@@ -103,4 +103,7 @@ public class Podcast {
     @OneToMany(mappedBy = "podcast", fetch = FetchType.LAZY, targetEntity = PodcastKeyword.class, orphanRemoval = true)
     private List<PodcastKeyword> podcastKeywords;
 
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private PodcastMeta podcastMeta;
+
 }

@@ -20,7 +20,7 @@ public class PodcastMeta {
     @Column(name = "id", nullable = false)
     Long id;
 
-    @Column(name = "slug")
+    @Column(name = "slug", unique = true)
     private String slug;
 
     @OneToOne
